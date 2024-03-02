@@ -5,6 +5,14 @@
     src:
       local('Inter-Variable'),
       url('Inter-Variable.woff2') format('woff2 supports variations');
-      font-weight: 400 500;
-      font-stretch: 1% 100%;
-  } 
+      font-weight: 400 800;
+}
+
+@font-face {
+    font-family: 'PressStart2P';
+    src:
+      local('PressStart2P'),
+      url('PressStart2P-Regular.woff') format('woff');
+      font-weight: 400;
+} 
+

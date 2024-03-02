@@ -30,11 +30,14 @@ a {
   color: inherit;
 }
 
-button,
-input {
+button {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 ul,
