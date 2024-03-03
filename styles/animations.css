@@ -12,3 +12,51 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes header__treangle {
+  0% {
+    transform: translate(0px);
+  }
+
+  50% {
+    transform: translate(4px);
+  }
+}
+
+@keyframes icon__heart {
+  0% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes icon__sparks {
+  0% {
+    fill: #ff0000;
+  }
+
+  100% {
+    fill: none;
+  }
+}
+
+@keyframes icon__hover__effect {
+  1% {
+    fill: var(--color-accent);
+  }
+
+  99% {
+    animation-play-state: paused;
+  }
+
+  100% {
+    fill: var(--color-accent);
+  }
+}
