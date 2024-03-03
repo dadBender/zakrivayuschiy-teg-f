@@ -227,8 +227,7 @@
   top: 25px;
   right: 25px;
   opacity: 50%;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--color-background);
+  text-shadow: 0px 0px 2px var(--color-background);
 }
 
 .card__text {
@@ -282,7 +281,6 @@
   transition-timing-function: ease;
   position: relative;
   overflow: hidden;
-  display: flex;
 }
 
 .card__button::after {
@@ -544,3 +542,16 @@
     padding-inline: 40px;
   }
 }
+
+  @supports (-webkit-text-stroke: 1px var(--color-background)) {
+    .card__image-lable {
+      position: absolute;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: var(--font-accent);
+      top: 25px;
+      right: 25px;
+      opacity: 50%;
+      -webkit-text-stroke: 1px var(--color-background);
+    }
+  }
