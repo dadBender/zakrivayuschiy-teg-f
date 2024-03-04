@@ -12,18 +12,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-:root {
-  --size-content: clamp(370px, 50%, 700px);
-  --card-filter-one: grayscale(0.5);
-  --card-filter-two: saturate(350%);
-  --card-filter-three: hue-rotate(-335deg);
-  --card-filter-four: invert(0.7);
-  --card-filter-five: sepia(80%);
-  --card-filter-six: blur(0.9rem);
-  --card-filter-seven: blur(0.1rem) hue-rotate(79deg) sepia(40%) saturate(120%);
-  --color-heart: none;
-  --color-heart-main-body: var(--color-background);
-}
+
 
 .page {
   min-inline-size: 320px;
@@ -71,10 +60,18 @@
 .theme-menu {
   padding-block-start: 25px;
   padding-block-end: 11px;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .theme-menu__button {
-  margin-bottom: 14px;
+  margin-block-end: 14px;
   padding: 0px 25px;
   position: relative;
   transition-property: opacity;
@@ -140,8 +137,7 @@
   border: 2px solid var(--color-accent);
   display: flex;
   flex-direction: column;
-  height: min-content;
-  margin-bottom: 50px;
+  margin-block-end: 50px;
 }
 
 .card__title {
@@ -152,71 +148,61 @@
 
 .card__image__containeer {
   position: relative;
-  display: flex;
-  width: 100%;
-  padding-bottom: 100%;
-  height: 0px;
+  display: grid;
+  size: 100%;
 }
 
 .card__image {
-  position: absolute;
-  width: 100%;
-  min-height: 100%;
-  max-height: 696px;
+  inline-size: 100%;
+  height: clamp(371px, 100%, 696px);
   object-fit: cover;
   object-position: center;
 }
 
-.main .card:nth-child(2) .card__image__containeer .card__image {
-  filter: var(--card-filter-one);
+.card:nth-child(2) .card__image {
+  filter: var(--card-filter-grayscale);
 }
 
-.main .card:nth-child(3) .card__image__containeer .card__image {
-  filter: var(--card-filter-two);
+.card:nth-child(3) .card__image {
+  filter: var(--card-filter-saturate);
 }
 
-.main .card:nth-child(4) .card__image__containeer .card__image {
-  filter: var(--card-filter-three);
+.card:nth-child(4) .card__image {
+  filter: var(--card-filter-hue);
 }
 
-.main .card:nth-child(5) .card__image__containeer .card__image {
-  filter: var(--card-filter-four);
+.card:nth-child(5) .card__image {
+  filter: var(--card-filter-invert);
 }
 
-.main .card:nth-child(6) .card__image__containeer .card__image {
-  filter: var(--card-filter-five);
+.card:nth-child(6) .card__image {
+  filter: var(--card-filter-sepia);
 }
 
-.main .card:nth-child(7) .card__image__containeer .card__image {
-  filter: var(--card-filter-six);
+.card:nth-child(7) .card__image {
+  filter: var(--card-filter-blur);
 }
 
-.main .card .card__title {
+.card__title {
   border-bottom: 2px solid var(--color-accent);
   padding-left: 10px;
   margin-left: 0px;
 }
 
-.main .card .card__text:nth-of-type(1) {
+.card__text:nth-of-type(1) {
   border-top: 2px solid var(--color-accent);
   padding: 25px 25px 0px 25px;
   margin: 0px;
 }
 
-.main .card:nth-child(8) .card__image__containeer .card__image {
-  filter: var(--card-filter-seven);
+.card:nth-child(8) .card__image {
+  filter: var(--card-filter-multi);
 }
 
-.main .card:nth-child(8) .card__title {
+.card:nth-child(8) .card__title {
   border-bottom: 2px solid var(--color-accent);
   padding-left: 10px;
   margin-left: 0px;
-}
-
-.main .card:nth-child(8) .card__text:nth-of-type(1) {
-  border-top: 2px solid var(--color-accent);
-  padding: 25px 25px 0px 25px;
-  margin: 0px;
 }
 
 .card__image-lable {
@@ -237,7 +223,7 @@
   font-weight: var(--font-variation-settings-weight-text);
 }
 
-.card__button-two__elemnet {
+.card__button__elemnets {
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -262,16 +248,14 @@
   border: 2px solid var(--color-accent);
 }
 
-.button {
+
+.card__button {
   font-family: var(--font-accent);
   font-size: 14px;
   border: 2px solid var(--color-accent);
   width: max-content;
   text-align: center;
   background-color: var(--color-background);
-}
-
-.card__button {
   min-width: 170px;
   display: flex;
   justify-content: center;
@@ -294,7 +278,8 @@
   transition: 0.5s ease-in-out;
 }
 
-.like__button {
+
+.card__like-button {
   padding-block: 12.5px;
   padding-inline: 37px;
   align-self: end;
@@ -303,12 +288,17 @@
 }
 
 .button__text {
+  text-transform: uppercase;
   mix-blend-mode: difference;
   color: var(--color-button);
   z-index: 1;
   display: flex;
   align-items: center;
   align-self: center;
+}
+
+.button__save {
+  text-transform: none;
 }
 
 .card__button:hover::after {
@@ -333,85 +323,8 @@
   transform-origin: center center;
 }
 
-.like-icon .heart .core {
-  transition-property: fill;
-  transition-duration: 0.4s;
-  transition-timing-function: linear;
-}
 
-.like-icon .heart .main-body {
-  transition-property: fill;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-  transition-delay: 0.05s;
-}
 
-.like-icon .heart .sparks {
-  transition-property: fill;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-  transition-delay: 0.1s;
-}
-
-.like-icon:hover .heart .main-body {
-  fill: var(--color-accent);
-  /* задержка 0.05s */
-}
-
-.like-icon:hover .heart .core {
-  /* animation: icon__hover__effect 2s linear forwards; */
-  fill: var(--color-accent);
-  /* без задержек */
-}
-
-.like-icon:active .heart .main-body {
-  fill: #ff0000;
-  /* задержка 0.05s */
-}
-
-.like-icon:active .heart .core {
-  fill: #ff0000;
-  /* без задержек */
-}
-
-.like-icon.is-liked .core {
-  fill: #ff0000;
-}
-.like-icon.is-liked .main-body {
-  fill: #ff0000;
-}
-.like-icon.is-liked .contour {
-  fill: #ff0000;
-}
-
-.like-icon.is-liked:hover .core {
-  fill: #ff0000;
-}
-
-.like-icon.is-liked:hover .main-body {
-  fill: #ff0000;
-}
-
-.like-icon.is-liked .heart {
-  transform-origin: center center;
-  animation-name: icon__heart;
-  animation-fill-mode: none;
-  animation-iteration-count: 1;
-  animation-duration: 0.3s;
-  animation-delay: 0.1s;
-  animation-timing-function: ease-in;
-}
-.like-icon {
-  transform-origin: center center;
-}
-.like-icon.is-liked .sparks {
-  transform-origin: center center;
-  animation-name: icon__sparks;
-  animation-iteration-count: 1;
-  animation-duration: 0.3s;
-  animation-delay: 0.3s;
-  animation-timing-function: ease-in;
-}
 
 .footer__save {
   width: max-content;
@@ -431,7 +344,7 @@
   height: 22px;
 }
 
-.css-modal-details {
+/* .css-modal-details {
   position: fixed;
   display: flex;
   width: 100%;
@@ -440,25 +353,25 @@
   align-items: center;
   background: rgba(0, 0, 0, 0.7);
   z-index: 100;
-}
+} */
 
-#dialog-id[open] form::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
-  z-index: 2;
+#dialog-id[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+  z-index: 0;
 }
 
 #dialog-id[open] {
   width: clamp(341px, 50%, 353px);
   border: 2px solid var(--color-accent);
-  position: fixed;
   padding: 30px;
   gap: 20px;
   background-color: var(--color-background);
-  top: 50%;
-  transform: translate(0%, -50%);
   z-index: 3;
   flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 /* #dialog-id[open]::before {
@@ -476,20 +389,6 @@
   width: 100%;
   height: 100%;
 } */
-
-.overflow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  z-index: 2;
-  -webkit-backdrop-filter: blur(7px);
-  backdrop-filter: blur(7px);
-  background-color: rgb(0 0 0 / 0.3);
-}
-
 #dialog-id[open] .dialog__content {
   display: flex;
   font-family: var(--font-accent);
@@ -545,13 +444,6 @@
 
   @supports (-webkit-text-stroke: 1px var(--color-background)) {
     .card__image-lable {
-      position: absolute;
-      font-size: 14px;
-      font-weight: 400;
-      font-family: var(--font-accent);
-      top: 25px;
-      right: 25px;
-      opacity: 50%;
       -webkit-text-stroke: 1px var(--color-background);
     }
   }

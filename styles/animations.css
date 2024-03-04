@@ -39,7 +39,7 @@
 
 @keyframes icon__sparks {
   0% {
-    fill: #ff0000;
+    fill: var(--color-heart-pressed);
   }
 
   100% {
@@ -60,3 +60,84 @@
     fill: var(--color-accent);
   }
 }
+
+.like-icon .heart .core {
+    transition-property: fill;
+    transition-duration: 0.4s;
+    transition-timing-function: linear;
+  }
+  
+  .like-icon .heart .main-body {
+    transition-property: fill;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transition-delay: 0.05s;
+  }
+  
+  .like-icon .heart .sparks {
+    transition-property: fill;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s;
+  }
+
+  .like-icon:hover .heart .main-body {
+    fill: var(--color-accent);
+    /* задержка 0.05s */
+  }
+  
+  .like-icon:hover .heart .core {
+    /* animation: icon__hover__effect 2s linear forwards; */
+    fill: var(--color-accent);
+    /* без задержек */
+  }
+  
+  .like-icon:active .heart .main-body {
+    fill: var(--color-heart-pressed);
+    /* задержка 0.05s */
+  }
+  
+  .like-icon:active .heart .core {
+    fill: var(--color-heart-pressed);
+    /* без задержек */
+  }
+  
+  .like-icon.is-liked .core {
+    fill: var(--color-heart-pressed);
+  }
+  .like-icon.is-liked .main-body {
+    fill: var(--color-heart-pressed);
+  }
+  .like-icon.is-liked .contour {
+    fill: var(--color-heart-pressed);
+  }
+  
+  .like-icon.is-liked:hover .core {
+    fill: var(--color-heart-pressed);
+  }
+  
+  .like-icon.is-liked:hover .main-body {
+    fill:var(--color-heart-pressed);
+  }
+  
+  .like-icon.is-liked .heart {
+    transform-origin: center center;
+    animation-name: icon__heart;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-in;
+  }
+  .like-icon {
+    transform-origin: center center;
+  }
+  .like-icon.is-liked .sparks {
+    transform-origin: center center;
+    animation-name: icon__sparks;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+    animation-delay: 0.3s;
+    animation-timing-function: ease-in;
+  }
+  
