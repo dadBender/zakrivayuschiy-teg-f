@@ -11,13 +11,20 @@
   --color-background: #ffffff;
   --color-accent: #000000;
   --gradient-color: #d3d3d3;
-  --background-gradient-inline:  repeating-linear-gradient(to right, var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient-block:   repeating-linear-gradient(var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient: linear-gradient(#e7e7e7 .01%, #1a1a1a);
+  --background-gradient-inline: repeating-linear-gradient(
+    to right,
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient-block: repeating-linear-gradient(
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient: linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   --size-content: clamp(370px, 50%, 700px);
   --card-filter-grayscale: grayscale(0.5);
-  --card-filter-saturate: saturate(350%);
-  --card-filter-hue: hue-rotate(-335deg);
+  --card-filter-saturate: saturate(50%);
+  --card-filter-hue: hue-rotate(-50deg);
   --card-filter-invert: invert(0.7);
   --card-filter-sepia: sepia(80%);
   --card-filter-blur: blur(0.9rem);

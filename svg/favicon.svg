@@ -13,9 +13,7 @@ width="256" height="256" >
         @media (prefers-color-scheme: dark) {
       svg {
         fill: #00CC14;
-      }
-       
-       
+      }       
     }
     </style>
  </svg>

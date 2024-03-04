@@ -14,9 +14,16 @@
   --color-background: #000000;
   --color-accent: #00cc14;
   --gradient-color: #000;
-  --background-gradient-inline: repeating-linear-gradient(var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient-block:  repeating-linear-gradient(to right, var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient: linear-gradient(#007f0c, #004306 );
+  --background-gradient-inline: repeating-linear-gradient(
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient-block: repeating-linear-gradient(
+    to right,
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient: linear-gradient(#007f0c, #004306);
 }
 
 :root.theme-light {
@@ -30,9 +37,16 @@
   --color-accent: #000000;
 
   --gradient-color: #d3d3d3;
-  --background-gradient-inline:  repeating-linear-gradient(to right, var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient-block:   repeating-linear-gradient(var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient: linear-gradient(#e7e7e7 .01%, #1a1a1a);
+  --background-gradient-inline: repeating-linear-gradient(
+    to right,
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient-block: repeating-linear-gradient(
+    var(--gradient-color) 0 2px,
+    transparent 2px 4px
+  );
+  --background-gradient: linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,9 +62,17 @@
     --color-button: #00cc14;
     --color-background: #000000;
     --color-accent: #00cc14;
-  --gradient-color: #000;
-  --background-gradient-inline: repeating-linear-gradient(to right, var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient-block:  repeating-linear-gradient(to bottom, var(--gradient-color) 0 2px, transparent 2px 4px);
-  --background-gradient: linear-gradient(#007f0c, #004306 );
+    --gradient-color: #000;
+    --background-gradient-inline: repeating-linear-gradient(
+      to right,
+      var(--gradient-color) 0 2px,
+      transparent 2px 4px
+    );
+    --background-gradient-block: repeating-linear-gradient(
+      to bottom,
+      var(--gradient-color) 0 2px,
+      transparent 2px 4px
+    );
+    --background-gradient: linear-gradient(#007f0c, #004306);
   }
 }
