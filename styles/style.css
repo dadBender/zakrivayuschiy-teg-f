@@ -145,9 +145,12 @@
 
 .card__title {
   padding-block: 5px;
-  font-weight: var(--font-variation-settings-weight-subtitle);
+  font-variation-settings: 'wght' var(--font-variation-settings-weight-subtitle);
   margin-left: 10px;
   font-size: 18px;
+  border-bottom: 2px solid var(--color-accent);
+  padding-left: 10px;
+  margin-left: 0px;
 }
 
 .card__image__containeer {
@@ -191,12 +194,6 @@
   filter: var(--card-filter-multi);
 }
 
-.card__title {
-  border-bottom: 2px solid var(--color-accent);
-  padding-left: 10px;
-  margin-left: 0px;
-}
-
 .card__text:nth-of-type(1) {
   border-top: 2px solid var(--color-accent);
   padding: 26px 25px 0px 25px;
@@ -218,7 +215,7 @@
   margin-top: 27px;
   margin-inline: 25px;
   font-size: 18px;
-  font-weight: var(--font-variation-settings-weight-text);
+  font-variation-settings: 'wght' var(--font-variation-settings-weight-text);
 }
 
 .card__button__elemnets {
