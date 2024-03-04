@@ -146,11 +146,10 @@
 .card__title {
   padding-block: 5px;
   font-variation-settings: 'wght' var(--font-variation-settings-weight-subtitle);
-  margin-left: 10px;
   font-size: 18px;
   border-bottom: 2px solid var(--color-accent);
   padding-left: 10px;
-  margin-left: 0px;
+  margin-inline-start: 0px;
 }
 
 .card__image__containeer {
